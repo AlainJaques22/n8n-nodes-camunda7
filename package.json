@@ -1,0 +1,58 @@
+{
+	"name": "n8n-nodes-camunda7",
+	"version": "0.1.0",
+	"description": "n8n community node for Camunda 7 BPM Platform",
+	"keywords": [
+		"n8n-community-node-package",
+		"n8n",
+		"camunda",
+		"camunda7",
+		"bpm",
+		"workflow"
+	],
+	"license": "MIT",
+	"homepage": "https://github.com/AlainJaques22/n8n-nodes-camunda7",
+	"author": {
+		"name": "Alain Jaques"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/AlainJaques22/n8n-nodes-camunda7.git"
+	},
+	"engines": {
+		"node": ">=18.10"
+	},
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc && gulp build:icons",
+		"dev": "tsc --watch",
+		"format": "prettier src --write",
+		"lint": "eslint src",
+		"lintfix": "eslint src --fix",
+		"prepublishOnly": "npm run build && npm run lint"
+	},
+	"files": [
+		"dist"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"credentials": [
+			"dist/credentials/Camunda7Api.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/Camunda7/Camunda7.node.js"
+		]
+	},
+	"devDependencies": {
+		"@typescript-eslint/parser": "~7.18.0",
+		"eslint": "~8.57.1",
+		"eslint-plugin-n8n-nodes-base": "~1.16.2",
+		"gulp": "~5.0.0",
+		"n8n-workflow": "*",
+		"prettier": "~3.3.3",
+		"typescript": "~5.6.3"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	}
+}
